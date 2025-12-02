@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Emulator - Classy Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/gruvbox-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="emulator-wrapper">
+            <!-- Header -->
+            <div class="header">
+                <div class="logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 3H21V21H3V3Z" stroke="#d79921" stroke-width="2" stroke-linejoin="round" />
+                        <path d="M7 8L12 12L7 16" stroke="#d79921" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M13 16H17" stroke="#d79921" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <span>JS Emulator</span>
+                </div>
+                <button class="play-button" id="runButton" title="Run Code (Ctrl/Cmd + Enter)">
+                    <svg class="play-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
+                    </svg>
+                    <span>Run</span>
+                </button>
+            </div>
+
+            <!-- Editor Section -->
+            <div class="editor-section" id="editorSection">
+                <div class="section-label">
+                    <span class="label-text">Code Editor</span>
+                </div>
+                <div class="editor-container">
+                    <textarea id="codeEditor">// Write your JavaScript code here
+console.log('Hello, World!');
+
+const greet = (name) => {
+  return `Welcome to JS Emulator, ${name}!`;
+};
+
+console.log(greet('Creator'));
+
+// Let's do some calculations
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((a, b) => a + b, 0);
+console.log(`Sum: ${sum}`);</textarea>
+                </div>
+            </div>
+
+            <!-- Resize Handle -->
+            <div class="resize-handle" id="resizeHandle">
+                <div class="resize-indicator"></div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section" id="outputSection">
+                <div class="section-label">
+                    <span class="label-text">Output</span>
+                    <button class="clear-button" id="clearButton" title="Clear Output">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="output-container" id="output">
+                    <div class="output-placeholder">Run your code to see output...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
